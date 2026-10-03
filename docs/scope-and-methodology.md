@@ -121,12 +121,17 @@ The following count as evidence:
 - A committed artifact in a public repository, cited by file path
 - A configuration state that can be demonstrated and captured
 - A documented process in a policy authored for this environment
+- A dated record of recurring activity, such as a decision log, review log, or version control history showing the practice performed over time
 
 The following do not:
 
 - An intention to implement a control
 - A plan, roadmap, or scheduled activity
 - Familiarity with how the control would be implemented
+
+Governance outcomes assert that a process is performed repeatedly, not that a document exists. A policy proves authorship. It does not prove review, decision-making under it, or sustained practice. Restricting evidence to documents and configuration states would therefore cap every GOVERN subcategory at the existence of its artifact and would systematically under-rate one Function relative to the others, producing a scorecard that measures the evidence rules rather than the environment.
+
+Version control history is treated as a dated record of recurring activity where the commit record demonstrates the practice itself. Risk register revisions across multiple remediation cycles, policy updates with dated justification, and successive assessment versions all qualify. A single commit establishing a document does not.
 
 Every rating of Partially Implemented or above carries at least one citation meeting the standard above. A rating that cannot be evidenced is lowered until it can be.
 
@@ -165,4 +170,4 @@ The constraints below affect the reliability of the assessment and are stated so
 
 | Version | Date | Change |
 |---|---|---|
-| 1.0 | 2026-09-26 | Initial version |
+| 1.1 | 2026-10-03 | Added dated records of recurring activity as an evidence type |
