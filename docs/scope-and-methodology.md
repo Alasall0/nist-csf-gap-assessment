@@ -1,7 +1,7 @@
 # Scope and Methodology
 
 NIST Cybersecurity Framework 2.0 Gap Assessment
-Version 1.0
+Version 1.2
 2026-09-26
 
 ---
@@ -112,6 +112,18 @@ A target of Fully Implemented across all 106 subcategories would produce a remed
 
 Where a subcategory is deliberately left below full implementation, the reason is recorded. Accepted risk is documented as accepted risk so that it does not read as an oversight.
 
+### Priority and target windows
+
+Every subcategory whose target status differs from its current status carries a priority. Priority reflects risk, meaning how important the gap is to close, and it sets the order in which gaps receive attention and resources. It does not describe how quickly the work can be completed.
+
+| Priority | Meaning | Target window |
+|---|---|---|
+| P1 | Highest risk, addressed first | Within 90 days of the assessment date |
+| P2 | Moderate risk | Within 6 months of the assessment date |
+| P3 | Lower risk | Within 12 months of the assessment date |
+
+The target window is the period within which a subcategory should reach its target status, not the period within which a plan should exist. Windows run from the assessment date recorded on the row.
+
 ---
 
 ## 9. Evidence standard
@@ -170,4 +182,6 @@ The constraints below affect the reliability of the assessment and are stated so
 
 | Version | Date | Change |
 |---|---|---|
+| 1.0 | 2026-09-26 | Initial version |
 | 1.1 | 2026-10-03 | Added dated records of recurring activity as an evidence type |
+| 1.2 | 2026-10-08 | Added priority definitions and target windows to section 8 |
