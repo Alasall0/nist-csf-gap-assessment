@@ -1,7 +1,7 @@
 # Scope and Methodology
 
 NIST Cybersecurity Framework 2.0 Gap Assessment
-Version 1.2
+Version 1.4
 2026-09-26
 
 ---
@@ -46,7 +46,11 @@ The exclusions below are named individually so that the boundary can be verified
 - The home network upstream of the OPNsense WAN interface
 - Anything on the internet service provider side of the perimeter
 - Physical and environmental controls for the hosting location
-- Any cloud service, software-as-a-service application, or third-party platform, since none are in use
+- Corporate endpoints, email, identity services, and software-as-a-service applications used by staff. These belong to the organization but not to the system assessed here.
+
+The assessment covers a system, not the whole company, which matches how a SOC 2 report scopes its subject. A single administrator operates the system, which is realistic for an organization of this size and is stated in the project policies.
+
+Technical outcomes are rated against the environment. Organizational outcomes are rated against what the organization has documented. Where the organizational context implies a practice that no artifact records, the practice is treated as absent.
 
 ### Note on Metasploitable2
 
@@ -92,6 +96,12 @@ Not Applicable and Not Implemented produce very different assessments from the s
 
 Where the distinction is arguable, the subcategory is rated Not Implemented and the argument is recorded in the rationale.
 
+### Subcategories excluded by the system boundary
+
+A subcategory whose subject is excluded from the system boundary in section 3 is rated Not Applicable, and the justification names the exclusion. These subcategories were not assessed, and rating them Not Implemented would report a gap that was never examined.
+
+This rule was added during assessment, when physical and environmental subcategories exposed a conflict between section 3, which excludes physical controls, and the rule above, which allows Not Applicable only where the subject does not exist. The rule applies only to exclusions written into section 3 before rating began. It cannot be used to exclude a subcategory after it has been rated.
+
 ---
 
 ## 7. Implementation Tier assessment
@@ -123,6 +133,24 @@ Every subcategory whose target status differs from its current status carries a 
 | P3 | Lower risk | Within 12 months of the assessment date |
 
 The target window is the period within which a subcategory should reach its target status, not the period within which a plan should exist. Windows run from the assessment date recorded on the row.
+
+### Assigning priority
+
+Priority is set by two inputs, impact and dependency. Impact levels follow FIPS 199.
+
+| Priority | Criteria |
+|---|---|
+| P1 | Loss of the outcome would have a severe or catastrophic effect on the business, or the outcome is foundational to several other outcomes |
+| P2 | Loss of the outcome would have a serious effect on the business, or a few other outcomes rely on it directly |
+| P3 | Loss of the outcome would have a limited effect on the business, and no more than one other outcome relies on it |
+
+Where a gap meets more than one level, it takes the highest.
+
+A gap that would fail a SOC 2 Trust Services Criterion moves up one level. Priorities are provisional until the crosswalk is complete.
+
+Exposure is not used. The environment has a single internet-facing interface, so exposure would score nearly every subcategory the same and could not rank them.
+
+Priority is assigned row by row during assessment and reviewed once across the full set when the POA&M is built. If the P1 list exceeds what an organization of this size could close within 90 days, the weakest P1 items are re-ranked down and the reason is recorded.
 
 ---
 
@@ -185,3 +213,5 @@ The constraints below affect the reliability of the assessment and are stated so
 | 1.0 | 2026-09-26 | Initial version |
 | 1.1 | 2026-10-03 | Added dated records of recurring activity as an evidence type |
 | 1.2 | 2026-10-08 | Added priority definitions and target windows to section 8 |
+| 1.3 | 2026-10-30 | Added priority criteria and review rule to section 8; rescoped the system boundary to the service-delivery system |
+| 1.4 | 2026-10-31 | Added Not Applicable rule for subcategories excluded by the system boundary, resolving a conflict between sections 3 and 6 |
